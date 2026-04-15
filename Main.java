@@ -61,7 +61,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("  ✗ Opcion invalida. Elige 1 o 2.\n");
+                    System.out.println("  Opcion invalida. Elige 1 o 2.\n");
             }
         }
 
