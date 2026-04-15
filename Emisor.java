@@ -7,22 +7,22 @@ import java.util.List;
  * Emisor: recibe datos del usuario y los encapsula
  * recorriendo las capas OSI de arriba (capa 7) hacia abajo (capa 1).
  *
- * La lógica de visualización se delega al Visualizador,
- * manteniendo la separación de responsabilidades.
+ * La logica de visualizacion se delega al Visualizador,
+ * manteniendo la separacion de responsabilidades.
  */
 public class Emisor {
 
     private final List<Capa> capas = new ArrayList<>();
 
-    // Descripciones del proceso realizado en cada capa (para visualización)
+    // Descripciones del proceso real realizado en cada capa
     private static final String[] PROCESOS_ENCAPSULACION = {
-            "Agrega cabecera HTTP con protocolo y version",
-            "Cifra contenido con Cesar-3, agrega cabecera de codificacion",
-            "Asigna identificador de sesion unico",
-            "Segmenta en bloques de " + CapaTransporte.TAMANIO_SEGMENTO + " chars y numera cada segmento",
-            "Agrega IPs de origen/destino y TTL (enrutamiento logico)",
-            "Agrega MACs de origen/destino y CRC calculado",
-            "Convierte cada caracter a 8 bits binarios"
+            "Define reglas HTTP: metodo GET, recurso, host y longitud",
+            "Comprime datos con DEFLATE+Base64 para optimizar transmision",
+            "Abre sesion unica, asigna ID, hora y checkpoint de control",
+            "Segmenta en ventanas de " + CapaTransporte.TAMANIO_SEGMENTO + " bytes para regular el flujo",
+            "Enruta el paquete: calcula ruta por routers y decrementa TTL",
+            "Garantiza confiabilidad: adjunta CRC-16 para deteccion de errores",
+            "Convierte todo a bits binarios para transmitir por el medio fisico"
     };
 
     public Emisor() {
