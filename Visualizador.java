@@ -30,22 +30,22 @@ public class Visualizador {
     public static void mostrarInicioEnvio(String mensajeOriginal) {
         System.out.println();
         linea('=');
-        centrar("PROCESO DE ENVIO  (Capa 7 → Capa 1)");
+        centrar("PROCESO DE ENVIO  (Capa 7 a Capa 1)");
         linea('=');
         System.out.println();
         System.out.println("  Datos originales del usuario:");
-        System.out.println("  ┌─ Entrada ─────────────────────────────────────────────────────");
+        System.out.println("  |= Entrada ===================================================");
         System.out.println("  │  " + mensajeOriginal);
-        System.out.println("  └───────────────────────────────────────────────────────────────");
+        System.out.println("  ==============================================================");
         System.out.println();
     }
 
     public static void mostrarPasoEncapsulacion(String nombreCapa, String entrada, String salida, String proceso) {
-        System.out.println("  ┌─ " + nombreCapa + " ─────────────────────────────────────────");
+        System.out.println("  |= " + nombreCapa + " ===========================================");
         System.out.println("  │  Entrada  : " + truncar(entrada, 55));
         System.out.println("  │  Proceso  : " + proceso);
         System.out.println("  │  Salida   : " + truncar(salida, 55));
-        System.out.println("  └───────────────────────────────────────────────────────────────");
+        System.out.println("  ==============================================================");
         System.out.println();
     }
 
@@ -53,7 +53,7 @@ public class Visualizador {
         linea('─');
         System.out.println();
         linea('=');
-        centrar("PROCESO DE RECEPCION  (Capa 1 → Capa 7)");
+        centrar("PROCESO DE RECEPCION  (Capa 1  Capa 7)");
         linea('=');
         System.out.println();
         System.out.println("  Bits recibidos del medio fisico:");
@@ -62,11 +62,11 @@ public class Visualizador {
     }
 
     public static void mostrarPasoDesencapsulacion(String nombreCapa, String entrada, String salida, String proceso) {
-        System.out.println("  ┌─ " + nombreCapa + " ─────────────────────────────────────────");
+        System.out.println("  |=" + nombreCapa + " ===========================================");
         System.out.println("  │  Entrada  : " + truncar(entrada, 55));
         System.out.println("  │  Proceso  : " + proceso);
         System.out.println("  │  Salida   : " + truncar(salida, 55));
-        System.out.println("  └───────────────────────────────────────────────────────────────");
+        System.out.println("  ==============================================================");
         System.out.println();
     }
 
@@ -101,7 +101,7 @@ public class Visualizador {
         System.out.println("\n¡Hasta luego!\n");
     }
 
-    // ─── Utilidades ──────────────────────────────────────────────────────────
+    // ─── Utilidades 
 
     private static String truncar(String texto, int max) {
         if (texto == null)
