@@ -80,20 +80,20 @@ public class Visualizador {
         System.out.printf("  Mensaje recuperado        : [%s]%n", recuperado);
         System.out.println();
         if (original.equals(recuperado)) {
-            System.out.println("  ✓ El mensaje se transmitio correctamente.");
+            System.out.println("   El mensaje se transmitio correctamente.");
         } else {
-            System.out.println("  ✗ Error: los mensajes no coinciden.");
+            System.out.println("   Error: los mensajes no coinciden.");
         }
         System.out.println();
     }
 
     public static void mostrarErrorMensajeVacio() {
-        System.out.println("  ✗ El mensaje no puede estar vacio.\n");
+        System.out.println("   El mensaje no puede estar vacio.\n");
     }
 
     public static void mostrarErrorLongitud(int len, int min, int max) {
         System.out.printf(
-                "  ✗ El mensaje tiene %d caracteres. Debe tener entre %d y %d caracteres.%n%n",
+                "   El mensaje tiene %d caracteres. Debe tener entre %d y %d caracteres.%n%n",
                 len, min, max);
     }
 
