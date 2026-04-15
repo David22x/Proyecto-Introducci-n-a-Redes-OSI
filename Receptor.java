@@ -8,22 +8,22 @@ import java.util.List;
  * Receptor: recibe los bits transmitidos y los desencapsula
  * recorriendo las capas OSI de abajo (capa 1) hacia arriba (capa 7).
  *
- * La lógica de visualización se delega al Visualizador,
- * manteniendo la separación de responsabilidades.
+ * La logica de visualizacion se delega al Visualizador,
+ * manteniendo la separacion de responsabilidades.
  */
 public class Receptor {
 
     private final List<Capa> capas = new ArrayList<>();
 
-    // Descripciones del proceso realizado en cada capa (para visualización)
+    // Descripciones del proceso real realizado en cada capa
     private static final String[] PROCESOS_DESENCAPSULACION = {
-            "Convierte bits a texto (reconstruccion de caracteres)",
-            "Quita cabecera MAC/CRC",
-            "Quita cabecera IP",
-            "Reensambla segmentos numerados en orden",
-            "Quita cabecera de sesion",
-            "Descifra contenido Cesar-3, quita cabecera de codificacion",
-            "Quita cabecera HTTP; entrega mensaje al usuario"
+            "Convierte bits a texto: reconstruye caracteres desde binario",
+            "Verifica CRC-16: confirma integridad de la trama recibida",
+            "Quita cabecera IP y ruta de enrutamiento",
+            "Reensambla segmentos numerados respetando orden de secuencia",
+            "Cierra sesion: retira ID, hora y checkpoint de control",
+            "Descomprime datos DEFLATE+Base64 y recupera texto original",
+            "Quita cabecera HTTP y entrega mensaje final al usuario"
     };
 
     public Receptor() {
