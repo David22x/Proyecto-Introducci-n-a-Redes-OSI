@@ -35,17 +35,17 @@ public class Visualizador {
         System.out.println();
         System.out.println("  Datos originales del usuario:");
         System.out.println("  |= Entrada ===================================================");
-        System.out.println("  │  " + mensajeOriginal);
-        System.out.println("  ==============================================================");
+        System.out.println("  |  " + mensajeOriginal);
+        System.out.println("  |==============================================================");
         System.out.println();
     }
 
     public static void mostrarPasoEncapsulacion(String nombreCapa, String entrada, String salida, String proceso) {
         System.out.println("  |= " + nombreCapa + " ===========================================");
-        System.out.println("  │  Entrada  : " + truncar(entrada, 55));
-        System.out.println("  │  Proceso  : " + proceso);
-        System.out.println("  │  Salida   : " + truncar(salida, 55));
-        System.out.println("  ==============================================================");
+        System.out.println("  |  Entrada  : " + truncar(entrada, 55));
+        System.out.println("  |  Proceso  : " + proceso);
+        System.out.println("  |  Salida   : " + truncar(salida, 55));
+        System.out.println("  |==============================================================");
         System.out.println();
     }
 
@@ -63,10 +63,10 @@ public class Visualizador {
 
     public static void mostrarPasoDesencapsulacion(String nombreCapa, String entrada, String salida, String proceso) {
         System.out.println("  |=" + nombreCapa + " ===========================================");
-        System.out.println("  │  Entrada  : " + truncar(entrada, 55));
-        System.out.println("  │  Proceso  : " + proceso);
-        System.out.println("  │  Salida   : " + truncar(salida, 55));
-        System.out.println("  ==============================================================");
+        System.out.println("  |  Entrada  : " + truncar(entrada, 55));
+        System.out.println("  |  Proceso  : " + proceso);
+        System.out.println("  |  Salida   : " + truncar(salida, 55));
+        System.out.println("  |==============================================================");
         System.out.println();
     }
 
@@ -101,7 +101,7 @@ public class Visualizador {
         System.out.println("\n¡Hasta luego!\n");
     }
 
-    // ─── Utilidades 
+    // ─── Utilidades
 
     private static String truncar(String texto, int max) {
         if (texto == null)
